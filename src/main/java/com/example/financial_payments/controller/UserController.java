@@ -20,16 +20,16 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("user")
 public class UserController {
 
-    private final UserService userService;
+    private final UserService service;
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Long> persist(@Valid @RequestBody UserDto userDto) {
-        return ResponseEntity.ok(userService.persist(userDto));
+        return ResponseEntity.ok(service.persist(userDto));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable long id) {
-        return ResponseEntity.ok(userService.getById(id));
+        return ResponseEntity.ok(service.getById(id));
     }
 
 }

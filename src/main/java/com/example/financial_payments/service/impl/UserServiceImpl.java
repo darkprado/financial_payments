@@ -1,4 +1,4 @@
-package com.example.financial_payments.service;
+package com.example.financial_payments.service.impl;
 
 import org.springframework.stereotype.Service;
 
@@ -6,6 +6,7 @@ import com.example.financial_payments.dao.UserDao;
 import com.example.financial_payments.dto.UserDto;
 import com.example.financial_payments.exception.UserNotFoundException;
 import com.example.financial_payments.mapper.UserMapper;
+import com.example.financial_payments.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 
