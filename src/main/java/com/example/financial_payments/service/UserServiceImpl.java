@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.financial_payments.dao.UserDao;
 import com.example.financial_payments.dto.UserDto;
+import com.example.financial_payments.exception.UserNotFoundException;
 import com.example.financial_payments.mapper.UserMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto getById(long id) {
-        return null;
+        return mapper.userToUserDto(dao.findById(id).orElseThrow(() -> new UserNotFoundException(id)));
     }
 }

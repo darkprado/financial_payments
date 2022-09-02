@@ -1,9 +1,10 @@
 package com.example.financial_payments.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import javax.validation.Valid;
+
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.financial_payments.dto.UserDto;
 import com.example.financial_payments.service.UserService;
@@ -21,9 +22,14 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/persist")
-    public long persist(@RequestBody UserDto userDto) {
-        return userService.persist(userDto);
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Long> persist(@Valid @RequestBody UserDto userDto) {
+        return ResponseEntity.ok(userService.persist(userDto));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDto> getUserById(@PathVariable long id) {
+        return ResponseEntity.ok(userService.getById(id));
     }
 
 }

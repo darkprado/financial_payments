@@ -1,27 +1,36 @@
 package com.example.financial_payments.dto;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.util.List;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
 
-import com.example.financial_payments.entity.Payment;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author s.melekhin
  * @since 02 сент. 2022 г.
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
 
     private long id;
+    @NotBlank(message = "Login is mandatory")
     private String login;
+    @NotBlank(message = "Password is mandatory")
     private String password;
+    @NotBlank(message = "Firstname is mandatory")
     private String firstname;
+    @NotBlank(message = "Lastname is mandatory")
     private String lastname;
+    @NotBlank(message = "Email is mandatory")
     private String email;
-    private LocalDate birthday;
+    @Past(message = "Birthday is mandatory")
+    private Timestamp birthday;
 
 }

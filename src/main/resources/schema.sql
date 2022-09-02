@@ -17,7 +17,7 @@ create table if not exists tbl_payments_details
 create table if not exists tbl_users
 (
     id        bigserial not null,
-    birthday  date,
+    birthday  timestamp,
     email     varchar(255),
     firstname varchar(255),
     lastname  varchar(255),

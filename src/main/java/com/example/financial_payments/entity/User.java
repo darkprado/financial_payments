@@ -1,5 +1,6 @@
 package com.example.financial_payments.entity;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class User {
     private String firstname;
     private String lastname;
     private String email;
-    private LocalDate birthday;
+    private Timestamp birthday;
     @OneToMany(mappedBy = "user")
     private List<Payment> payments;
 
