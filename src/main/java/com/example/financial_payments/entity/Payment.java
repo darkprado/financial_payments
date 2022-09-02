@@ -28,6 +28,6 @@ public class Payment {
     private String name;
     private int price;
     @OneToMany(mappedBy = "payment")
-    private List<PaymentDetails> paymentDetailsList;
+    private List<PaymentHistory> paymentHistoryList;
 
 }

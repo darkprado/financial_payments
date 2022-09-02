@@ -6,7 +6,7 @@ create table if not exists tbl_payments
     user_id int8,
     primary key (id)
 );
-create table if not exists tbl_payments_details
+create table if not exists tbl_payments_history
 (
     id         bigserial not null,
     month      int4      not null,
