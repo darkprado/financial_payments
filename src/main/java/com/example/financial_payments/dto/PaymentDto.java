@@ -1,13 +1,7 @@
 package com.example.financial_payments.dto;
 
-import java.util.List;
-
-import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
-import com.example.financial_payments.entity.PaymentHistory;
-import com.example.financial_payments.entity.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

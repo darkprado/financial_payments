@@ -1,7 +1,6 @@
 package com.example.financial_payments.dto;
 
 import java.sql.Timestamp;
-import java.time.LocalDate;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;

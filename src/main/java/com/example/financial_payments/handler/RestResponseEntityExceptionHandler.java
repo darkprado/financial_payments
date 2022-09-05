@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.example.financial_payments.exception.PaymentHistoryNotFoundException;
 import com.example.financial_payments.exception.PaymentNotFoundException;
 import com.example.financial_payments.exception.UserNotFoundException;
 
@@ -17,13 +18,17 @@ import com.example.financial_payments.exception.UserNotFoundException;
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({ UserNotFoundException.class })
-    public ResponseEntity<Object> UserNotFoundException(UserNotFoundException ex) {
+    public ResponseEntity<Object> userNotFoundException(UserNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler({ PaymentNotFoundException.class })
-    public ResponseEntity<Object> UserNotFoundException(PaymentNotFoundException ex) {
+    public ResponseEntity<Object> paymentNotFoundException(PaymentNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler({ PaymentHistoryNotFoundException.class })
+    public ResponseEntity<Object> paymentHistoryNotFoundException(PaymentHistoryNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
 }

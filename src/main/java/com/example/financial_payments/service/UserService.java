@@ -1,11 +1,6 @@
 package com.example.financial_payments.service;
 
-import org.springframework.stereotype.Service;
-
-import com.example.financial_payments.dao.UserDao;
 import com.example.financial_payments.dto.UserDto;
-
-import lombok.RequiredArgsConstructor;
 
 /**
  * @author s.melekhin
