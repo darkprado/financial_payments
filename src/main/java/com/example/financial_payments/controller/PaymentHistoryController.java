@@ -33,7 +33,7 @@ public class PaymentHistoryController {
         return ResponseEntity.ok(service.getById(id));
     }
 
-    @GetMapping("all/payment/{paymentId}")
+    @GetMapping("all/{paymentId}")
     public ResponseEntity<List<PaymentHistoryDto>> getAllPaymentByUserId(@PathVariable long paymentId) {
         return ResponseEntity.ok(service.getByUserId(paymentId));
     }
